@@ -38,3 +38,18 @@ React Testing Library
 - If you have an oldver version of `npm` and can't upgrade:
   - Go to https://github.com/facebook/create-react-app
   - Follow link "instrucations for older npm versions"
+
+## 3. First Test with Testing Library
+
+
+```js
+// App.test.js - Test that came out of the box for CRA
+import { render, screen } from '@testing-library/react'
+import App from './App'
+
+test('renders learn react link', () => {
+  render(<App />)
+  const linkElement = screen.getByTest(/learn react/i)
+  expect(linkElement).toBeInTheDocument();
+})
+```
