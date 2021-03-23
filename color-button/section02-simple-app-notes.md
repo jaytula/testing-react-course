@@ -68,3 +68,14 @@
 - Issue with functional tests:
   - high-level makes them resistant to refactors
   - high-level makes them difficult to diagnose
+
+# 25. Review: Simple App
+
+- Test interactivity using `fireEvent`
+- jest-dom assertions:
+  - `toBeEnabled()`
+  - `toBeDisabled()`
+  - `toBeChecked()`
+- `getByRole` option `{ name: }`
+- Jest `describe` to group tests
+- Unit testing functions
