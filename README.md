@@ -54,7 +54,7 @@ test('renders learn react link', () => {
 })
 ```
 
-# 4. Jest and Jest-DOM Assertions
+## 4. Jest and Jest-DOM Assertions
 
 ```javascript
 // expect([subject of assertion]).[matcher]()
@@ -70,7 +70,7 @@ expect(linkElement).toBeInTheDocument();
   - DOM-based matchers e.g. `.toBeInTheDocument()`
     - examples: `toBeVisible()` or `toBeChecked()`
 
-# 5. Jest: Watch Mode and How Tests Works
+## 5. Jest: Watch Mode and How Tests Works
 
 - React Testing Library helps with
   - rendering components into virtual DOM
@@ -83,14 +83,14 @@ expect(linkElement).toBeInTheDocument();
   - comes with create-react-app
 - `npm test` runs an npm script that runs Jest in watch mode
 
-## Jest Watch Mode
+### Jest Watch Mode
 
 - Watch for changes in files since last commit
 - Only run tests related to these files
 - No changes? No tests
   - Type `a` to run all tests
 
-## How does Jest Work?
+### How does Jest Work?
 
 - global `test` method has two arguments:
   - string description
@@ -100,7 +100,7 @@ expect(linkElement).toBeInTheDocument();
 - No error means tests pass
   - Empty test passes!
 
-# 6. TDD (Test-Driven Development)
+## 6. TDD (Test-Driven Development)
 
 - Write tests before writing code
   - then write code according to "spec" set by tests
@@ -113,22 +113,22 @@ expect(linkElement).toBeInTheDocument();
 4. Write code
 5. Tests pass!
 
-## Why TDD?
+### Why TDD?
 
 - Makes a huge difference in how it feels to write tests
   - part of the coding process, not a "chore" to do at the end
 - More efficient
   - Re-run tests "for free" after change
 
-# 7. React Testing Library Philosophy
+## 7. React Testing Library Philosophy
 
-## What does React Testing Library Do?
+### What does React Testing Library Do?
 
 - Creates a virtual DOM for testing
   - and utitilities for interacting with DOM
 - Allows testing without a browser
 
-## Types of Tests
+### Types of Tests
 
 - Unit tests
   - Tests one unit of code in isolation
@@ -139,11 +139,11 @@ expect(linkElement).toBeInTheDocument();
 - Acceptance / End-to-end (E2E) Tests
   - Use actual browser and server (Cypress, Selenium)
 
-# 8. Functional Testing
+## 8. Functional Testing
 
 different mindset from unit testing
 
-## Unit Testing
+### Unit Testing
 
 Want tests to be as isolated as possible. e.g. mock dependencies. test internals
 
@@ -152,7 +152,7 @@ Want tests to be as isolated as possible. e.g. mock dependencies. test internals
 - Further from how users interact with software
 - More likely to break with refactoring
 
-## Functional Testing
+### Functional Testing
 
 Includes all relevant units, test behavior
 
@@ -161,7 +161,7 @@ Includes all relevant units, test behavior
 
 - More difficult to debug failing tests
 
-# 9. TDD vs BDD
+## 9. TDD vs BDD
 
 - Quick detour for BDD: Behavior-Driven Development
 - Testing Library encourages testing *behavior* over *implementation*
@@ -172,7 +172,7 @@ Includes all relevant units, test behavior
     - developers, QA, business partners, etc.
 - In this course, only developers, so TDD!
 
-# 10. Accessibility and Finding Elements
+## 10. Accessibility and Finding Elements
 
 - Testing Library recommends finding elements by accessibility handles
 - https://testing-library.com/docs/queries/about/#priority
