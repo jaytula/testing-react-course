@@ -119,3 +119,22 @@ expect(linkElement).toBeInTheDocument();
   - part of the coding process, not a "chore" to do at the end
 - More efficient
   - Re-run tests "for free" after change
+
+# 7. React Testing Library Philosophy
+
+## What does React Testing Library Do?
+
+- Creates a virtual DOM for testing
+  - and utitilities for interacting with DOM
+- Allows testing without a browser
+
+## Types of Tests
+
+- Unit tests
+  - Tests one unit of code in isolation
+- Integration tests
+  - How multiple units work together
+- Functional tests
+  - Tests a particular function of software (testing behavior)
+- Acceptance / End-to-end (E2E) Tests
+  - Use actual browser and server (Cypress, Selenium)
