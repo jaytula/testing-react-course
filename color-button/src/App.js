@@ -1,20 +1,23 @@
 import "./App.css";
 import { useState } from "react";
 
+const INITIAL_COLOR = 'MediumVioletRed';
+const ALT_COLOR = 'MidnightBlue';
+
 function App() {
-  const [buttonColor, setButtonColor] = useState("red");
-  const [buttonText, setButtonText] = useState("Change to blue");
+  const [buttonColor, setButtonColor] = useState(INITIAL_COLOR);
+  const [buttonText, setButtonText] = useState("Change to Midnight Blue");
   const [checked, setChecked] = useState(false);
 
-  const nextColor = buttonColor === "red" ? "blue" : "red";
+  const nextColor = buttonColor === INITIAL_COLOR ? ALT_COLOR : INITIAL_COLOR;
 
   const onClick = (event) => {
-    setButtonText(`Change to ${buttonColor}`);
+    setButtonText(`Change to ${replaceCamelWithSpaces(buttonColor)}`);
     setButtonColor(nextColor);
   };
 
   return (
-    <div className="App">
+    <div className="App" style={{color: 'white'}}>
       <button
         style={{ backgroundColor: checked ? 'gray' : buttonColor }}
         onClick={onClick}

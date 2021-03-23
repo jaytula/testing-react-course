@@ -3,9 +3,9 @@ import App, {replaceCamelWithSpaces} from './App';
 
 test('button has correct initial color', () => {
   render(<App />);
-  const buttonElement = screen.getByRole('button', {name: 'Change to blue'});
+  const buttonElement = screen.getByRole('button', {name: /change to/i});
   expect(buttonElement).toHaveStyle({
-    backgroundColor: 'red'
+    backgroundColor: 'MediumVioletRed'
   })
 })
 
@@ -17,16 +17,16 @@ test('button has correct initial color', () => {
 
 test('button turns blue when clicked', () => {
   render(<App />);
-  const buttonElement = screen.getByRole('button', {name: 'Change to blue'});
+  const buttonElement = screen.getByRole('button', {name: /change to/i});
 
   fireEvent.click(buttonElement);
 
   expect(buttonElement).toHaveStyle({
-    backgroundColor: 'blue'
+    backgroundColor: 'Midnight Blue'
   })
 
-  expect(buttonElement.textContent).toBe('Change to red')
-  expect(buttonElement).toHaveTextContent(/change to red/i)
+  expect(buttonElement.textContent).toBe('Change to Medium Violet Red')
+  expect(buttonElement).toHaveTextContent(/change to medium violet red/i)
 })
 
 test('checkbox enables button', () => {
@@ -36,7 +36,7 @@ test('checkbox enables button', () => {
 
   // Test initial 
   expect(colorButton).toBeEnabled()
-  expect(colorButton).toHaveTextContent(/change to blue/i)
+  expect(colorButton).toHaveTextContent(/change to midnight blue/i)
   expect(checkbox).not.toBeChecked()
 
   fireEvent.click(checkbox)
@@ -58,7 +58,7 @@ test('button gray when disabled', () => {
   expect(colorButton).toHaveStyle({backgroundColor: 'gray'})
 
   fireEvent.click(checkbox);
-  expect(colorButton).toHaveStyle({backgroundColor: 'red'})
+  expect(colorButton).toHaveStyle({backgroundColor: 'MediumVioletRed'})
 
 })
 
@@ -72,7 +72,7 @@ test('disable button after clicking it', () => {
   expect(colorButton).toHaveStyle({backgroundColor: 'gray'})
 
   fireEvent.click(checkbox);
-  expect(colorButton).toHaveStyle({backgroundColor: 'blue'})
+  expect(colorButton).toHaveStyle({backgroundColor: 'MidnightBlue'})
 })
 
 // MediumVioletRed => Medium Violet Red
