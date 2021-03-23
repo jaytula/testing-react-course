@@ -2,14 +2,14 @@ import "./App.css";
 import { useState } from "react";
 
 function App() {
-  const [buttonColor, setButtonColor] = useState('red');
-  const [buttonText, setButtonText] = useState('Change to blue');
-  const [checked, setChecked] = useState(false)
+  const [buttonColor, setButtonColor] = useState("red");
+  const [buttonText, setButtonText] = useState("Change to blue");
+  const [checked, setChecked] = useState(false);
 
-  const nextColor = buttonColor === 'red' ? 'blue' : 'red';
+  const nextColor = buttonColor === "red" ? "blue" : "red";
 
   const onClick = (event) => {
-    setButtonText(`Change to ${buttonColor}`)
+    setButtonText(`Change to ${buttonColor}`);
     setButtonColor(nextColor);
   };
 
@@ -24,7 +24,13 @@ function App() {
       </button>
       <div>
         <label htmlFor="checkbox-disabler">Disable Button</label>
-        <input type="checkbox" checked={checked} onChange={() => setChecked(prev => !prev)} id="checkbox-disabler" />
+        <input
+          type="checkbox"
+          aria-checked={checked}
+          checked={checked}
+          onChange={() => setChecked((prev) => !prev)}
+          id="checkbox-disabler"
+        />
       </div>
     </div>
   );

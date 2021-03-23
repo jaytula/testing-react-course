@@ -43,4 +43,8 @@ test('checkbox enables button', () => {
   // Test checkbox checked
   expect(checkbox).toBeChecked()
   expect(colorButton).toBeDisabled()
+
+  fireEvent.click(checkbox)
+  expect(checkbox).not.toBeChecked();
+  expect(colorButton).toBeEnabled();
 })
