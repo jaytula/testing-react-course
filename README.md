@@ -160,3 +160,14 @@ Includes all relevant units, test behavior
 + Robust tests
 
 - More difficult to debug failing tests
+
+# 9. TDD vs BDD
+
+- Quick detour for BDD: Behavior-Driven Development
+- Testing Library encourages testing *behavior* over *implementation*
+- So shouuldn't we calling this BDD instead of TDD?
+  - actually, no.
+- BDD is very explicitly defined
+  - involves collaboration between lots of roles
+    - developers, QA, business partners, etc.
+- In this course, only developers, so TDD!
