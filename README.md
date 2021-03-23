@@ -171,3 +171,28 @@ Includes all relevant units, test behavior
   - involves collaboration between lots of roles
     - developers, QA, business partners, etc.
 - In this course, only developers, so TDD!
+
+# 10. Accessibility and Finding Elements
+
+- Testing Library recommends finding elements by accessibility handles
+- https://testing-library.com/docs/queries/about/#priority
+- 1. Queries Accessible by Everyone
+  1. `getByRole`
+  2. `getByLabelText`
+  3. `getByPlacehodlerText`
+  4. `getByText`
+  5. `getByDisplayValue`
+- 2. Semantic Queries
+  1. `getByAltText`
+  2. `getByTitle`
+- 3. Test IDS 
+
+- `create-react-app`'s example test uses `getByText`
+  - ok for non-interactive elements
+  - better: `getByRole`
+
+- Roles documentation: https://www.w3.org/TR/wai-aria/#role_definitions
+  - some elements have build-in roles: `button` has role *button*, `a` has role *link*
+- Can't find an element with a screen reader would?
+  - Then your app isn't friendly to screen readers.
+- Much more about queries and roles later!
