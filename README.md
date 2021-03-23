@@ -89,3 +89,13 @@ expect(linkElement).toBeInTheDocument();
 - Only run tests related to these files
 - No changes? No tests
   - Type `a` to run all tests
+
+## How does Jest Work?
+
+- global `test` method has two arguments:
+  - string description
+  - test function
+- Test fails if error is thrown when running function
+  - assertions throw errors when expection fails
+- No error means tests pass
+  - Empty test passes!
