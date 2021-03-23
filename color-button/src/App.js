@@ -36,4 +36,13 @@ function App() {
   );
 }
 
+export const replaceCamelWithSpaces = colorName => {
+  const result = []
+  colorName.split('').reverse().forEach((letter) => {
+    result.push(letter);
+    if(letter.match(/[A-Z]/)) result.push(' ');
+  })
+  return result.reverse().join('').trim()
+}
+
 export default App;
