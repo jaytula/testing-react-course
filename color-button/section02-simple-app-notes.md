@@ -22,3 +22,28 @@
 ## 12. Start Color Button App
 
 - Clicking button changes from red to blue and then back when clicked again.
+
+## 17. Intro to Code Quizzes
+
+- Give you spec and hints, you write tests
+- Purpose
+  - Practice what you've learned
+  - reinforce in memory
+  - Expose areas where you have questions
+    - ask in Q&A
+    - Please include link to GitHub for "why is my code not working"
+- Start with lots of guidance
+  - build to code quizzes with very little guidance
+
+### Test Only or Tests and Code
+
+- Your choice:
+  - Code tests only (test against pre-written code provided on GitHub)
+  - https://github.com/bonnie/udemy-TESTING-LIBRARY/tree/master/code-quiz
+  - Code tets and code
+- I recommend coding both the tests and code
+  - Dive deeper into how code and tests interact
+  - Pracrtice debugging tests and code at the same time
+- Option to use pre-written code for
+  - those with limited time
+  - help in debugging whether *code* for *tests* are the issue
