@@ -18,3 +18,7 @@
 - Folks come to this course at many levels
 - Optional lectures explaining React syntax and decisions
 - Feel free to skip!
+
+## 12. Start Color Button App
+
+- Clicking button changes from red to blue and then back when clicked again.
