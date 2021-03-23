@@ -53,3 +53,19 @@ test('renders learn react link', () => {
   expect(linkElement).toBeInTheDocument();
 })
 ```
+
+# 4. Jest and Jest-DOM Assertions
+
+```javascript
+// expect([subject of assertion]).[matcher]()
+expect(linkElement).toBeInTheDocument();
+```
+
+- More assertion examples
+  - `expect(elemment.textContent).toBe('hello');`
+  - `expect(elementsArray).toHaveLength(7);`
+- jest-dom
+  - comes with create-react-app
+  - `src/setupTests.js` imports it before each test, make matchers available
+  - DOM-based matchers e.g. `.toBeInTheDocument()`
+    - examples: `toBeVisible()` or `toBeChecked()`
