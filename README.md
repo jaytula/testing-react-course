@@ -69,3 +69,23 @@ expect(linkElement).toBeInTheDocument();
   - `src/setupTests.js` imports it before each test, make matchers available
   - DOM-based matchers e.g. `.toBeInTheDocument()`
     - examples: `toBeVisible()` or `toBeChecked()`
+
+# 5. Jest: Watch Mode and How Tests Works
+
+- React Testing Library helps with
+  - rendering components into virtual DOM
+  - searching virtual DOM
+  - Interacting with virtual DOM
+- Needs a test runner
+  - Find tests, run them, make assertions
+- Jest
+  - is recommended by Testing Library
+  - comes with create-react-app
+- `npm test` runs an npm script that runs Jest in watch mode
+
+## Jest Watch Mode
+
+- Watch for changes in files since last commit
+- Only run tests related to these files
+- No changes? No tests
+  - Type `a` to run all tests
