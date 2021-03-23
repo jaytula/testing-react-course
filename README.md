@@ -138,3 +138,25 @@ expect(linkElement).toBeInTheDocument();
   - Tests a particular function of software (testing behavior)
 - Acceptance / End-to-end (E2E) Tests
   - Use actual browser and server (Cypress, Selenium)
+
+# 8. Functional Testing
+
+different mindset from unit testing
+
+## Unit Testing
+
+Want tests to be as isolated as possible. e.g. mock dependencies. test internals
+
++ Very easy to pinpoint failures
+
+- Further from how users interact with software
+- More likely to break with refactoring
+
+## Functional Testing
+
+Includes all relevant units, test behavior
+
++ Clsoe to how users interact with software
++ Robust tests
+
+- More difficult to debug failing tests
