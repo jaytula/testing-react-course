@@ -37,3 +37,18 @@ expect(checkbox).toBeChecked();
   - https://github.com/testing-library/eslint-plugin-testing-library
   - https://github.com/testing-library/eslint-plugin-jest-dom
 
+## 27. ESLint for Testing Library and Jest-DOM
+
+```shell
+# Install ESLint plugin for testing-library and jest-dom
+npm i eslint-plugin-testing-library eslint-plugin-jest-dom
+```
+
+- Plug-ins extend ESLint
+- Testing Library and jest-dom ESLint plugins
+  - Enforce best practices
+- https://github.com/testing-library/eslint-plugin-testing-library
+- https://github.com/testing-library/eslint-plugin-jest-dom
+
+- My preferred rules and plug-ins
+- https://github.com/bonnie/bonniedotdev/blob/master/client/.eslintrc.json
