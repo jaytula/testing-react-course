@@ -73,3 +73,15 @@ npm i eslint-plugin-testing-library eslint-plugin-jest-dom
 
 - https://code.visualstudio.com/docs/getstarted/settings#_settings-file-locations
 - Add `.eslintcache` to `.gitignore`
+
+## 29. Configure Prettier in VSCode
+
+- Install VSCode Prettier extension
+- In `settings.json`, set property:
+
+```json
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true
+}
+```
