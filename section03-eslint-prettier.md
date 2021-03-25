@@ -8,6 +8,7 @@
 - Linting keeps code style consistent
   - especially for multi-eng projects
 - Also catches errors in code
+
   - using variable before defining
   - importing from nonexisting file
   - etc
@@ -16,8 +17,8 @@
   - example: spaces around curly braces
 
 ```javascript
-import {useEffect} from 'react';
-import { useEffect } from 'react'
+import { useEffect } from "react";
+import { useEffect } from "react";
 ```
 
 - Linters address format and style
@@ -85,3 +86,16 @@ npm i eslint-plugin-testing-library eslint-plugin-jest-dom
   "editor.formatOnSave": true
 }
 ```
+
+## 30. Review: ESLint and Prettier
+
+- ESLint
+  - `npm install eslint-plugin-testing-library eslint-plugin-jest-dom`
+  - Remove `eslintConfig` from `package.json`
+  - Create `.eslintrc.json` and add standard config
+  - Install ESlint extension for VSCode
+  - Create `.vscode/settings.json` and add standard config
+  - Add `.eslintcache` and `.vscode` to `.gitignore`
+- Prettier
+  - Add settings to `.vscode/settings.json`
+  - Install Prettier on VSCode
