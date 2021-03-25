@@ -53,4 +53,23 @@ npm i eslint-plugin-testing-library eslint-plugin-jest-dom
 - My preferred rules and plug-ins
 - https://github.com/bonnie/bonniedotdev/blob/master/client/.eslintrc.json
 
-## 28. Configure ESLint and Prettier
+## 28. Configure ESLint in VSCode
+
+- Create `.vscode/settings.json` in project folder
+
+```json
+{
+  "eslint.options": {
+    "configFile": ".eslintrc.json"
+  },
+  "eslint.validate": ["javascript", "javascriptreact"],
+  "[javascript, javascriptreact]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    }
+  }
+}
+```
+
+- https://code.visualstudio.com/docs/getstarted/settings#_settings-file-locations
+- Add `.eslintcache` to `.gitignore`

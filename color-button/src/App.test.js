@@ -25,7 +25,7 @@ test('button turns blue when clicked', () => {
     backgroundColor: 'Midnight Blue'
   })
 
-  expect(buttonElement.textContent).toBe('Change to Medium Violet Red')
+  // expect(buttonElement.textContent).toBe('Change to Medium Violet Red')
   expect(buttonElement).toHaveTextContent(/change to medium violet red/i)
 })
 
