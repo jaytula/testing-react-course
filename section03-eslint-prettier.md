@@ -52,3 +52,5 @@ npm i eslint-plugin-testing-library eslint-plugin-jest-dom
 
 - My preferred rules and plug-ins
 - https://github.com/bonnie/bonniedotdev/blob/master/client/.eslintrc.json
+
+## 28. Configure ESLint and Prettier
