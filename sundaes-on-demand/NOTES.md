@@ -24,7 +24,7 @@
 - We will not be testing context implementation
   - only interested in testing behavior as seen by user!
 - Tests no different if we used Redux, Mobx, etc
-- Only difference is the test *setup*
+- Only difference is the test _setup_
   - make sure component is wrapped in context
   - ensure functionality
   - avoid errors
@@ -47,12 +47,20 @@
 
 - Download from course repo
   - https://github.com/bonnie/udemy-TESTING-LIBRARY/tree/master/sundae-server
-  - Follow instructions in *README.md* to install
+  - Follow instructions in _README.md_ to install
 - RESTful API, runs on port 3030
 - For flavors / toppings, just sends static info
   - In a real app, sould come from db
 - For order, simply generates random order number
 - Server not needed for functional react app testing!
+
   - use mock-service-worker to mock responses from server
   - server for spec, manual acceptance testing
-  
+
+  ## Lesson 33: React Bootstrap Setup
+
+  - course will use react-bootstrap
+    - you can use any styling you want, or none
+  - `npm install react-bootstrap bootstrap`
+  - Copy under _Browser Globals_ here: https://react-bootstrap.github.io/getting-started/introduction/ and
+    add to `index.html`
