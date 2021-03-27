@@ -57,10 +57,39 @@
   - use mock-service-worker to mock responses from server
   - server for spec, manual acceptance testing
 
-  ## Lesson 33: React Bootstrap Setup
+## Lesson 33: React Bootstrap Setup
 
-  - course will use react-bootstrap
-    - you can use any styling you want, or none
-  - `npm install react-bootstrap bootstrap`
-  - Copy under _Browser Globals_ here: https://react-bootstrap.github.io/getting-started/introduction/ and
-    add to `index.html`
+- course will use react-bootstrap
+  - you can use any styling you want, or none
+- `npm install react-bootstrap bootstrap`
+- Copy under _Browser Globals_ here: https://react-bootstrap.github.io/getting-started/introduction/ and
+  add to `index.html`
+
+## Lesson 34: Code Organization and Introduction to SummaryForm
+
+## Order Summary Component
+
+- "I agree to Terms and Conditions" checkbox
+- "Confirm order" button
+- PopOver for Terms and Conditions
+
+- Test and code checkbox /button
+  - Sound familiar?
+- Test and code Terms & Conditions "popover"
+
+  - syntax to test that element is no longer on page
+
+- Later:
+  - test and code summary test
+  - test and code button functionality
+
+### Code Organization
+
+- Organize components by pages
+  - `test` directory for each page
+  - Jest will find and run any files that end in _.test.js_
+- `src/pages/summary`
+  - `OrderSummary.jsx`
+  - `SummaryForm.jsx`
+- `src/pages/summary/test`
+  - `SummaryForm.test.jsx`
