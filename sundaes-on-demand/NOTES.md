@@ -67,7 +67,7 @@
 
 ## Lesson 34: Code Organization and Introduction to SummaryForm
 
-## Order Summary Component
+### Order Summary Component
 
 - "I agree to Terms and Conditions" checkbox
 - "Confirm order" button
@@ -93,3 +93,20 @@
   - `SummaryForm.jsx`
 - `src/pages/summary/test`
   - `SummaryForm.test.jsx`
+
+## Lesson 35: Code Quiz! Checkbox enables button
+
+- Write tests to ensure that
+  - Checkbox is unchecked by default
+  - Checking checkbox enables button
+  - Unchecking checkbox again disables button
+- A chance to set up your own test from scatch
+  - Use tests from last section as a model
+  - Render the `<SummaryForm />` component
+- Find checkbox and button using `{name}` option
+  - Use mockup for "name" option values
+- Check that tests fail! Red part of red-green testing
+
+- Use what you remember and/or reference material
+  - https://testing-library.com/docs/react-testing-library/cheatsheet
+  - https://github.com/testing-library/jest-dom
