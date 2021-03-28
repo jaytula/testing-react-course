@@ -110,3 +110,11 @@
 - Use what you remember and/or reference material
   - https://testing-library.com/docs/react-testing-library/cheatsheet
   - https://github.com/testing-library/jest-dom
+
+# Lesson 37: React Bootstrap Popover and Testing Library userEvent
+
+- Test "Terms & Conditions" Popover
+- Will be using React Bootstrap `Popover`: https://react-bootstrap.github.io/components/overlays/#popovers
+- `userEvent` more appropriate
+- Install `npm install @testing-library/user-event @testing-library/dom -D`
+- Recommended to use `userEvent` over `fireEvent`

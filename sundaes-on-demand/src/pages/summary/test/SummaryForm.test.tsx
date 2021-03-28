@@ -1,4 +1,5 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import SummaryForm from "../SummaryForm";
 
 describe("SummaryForm", () => {
@@ -13,12 +14,22 @@ describe("SummaryForm", () => {
     expect(agreeCheckbox).not.toBeChecked();
     expect(submitOrderButton).toBeDisabled();
 
-    fireEvent.click(agreeCheckbox);
+    userEvent.click(agreeCheckbox);
     expect(agreeCheckbox).toBeChecked();
     expect(submitOrderButton).toBeEnabled();
 
-    fireEvent.click(agreeCheckbox);
+    userEvent.click(agreeCheckbox);
     expect(agreeCheckbox).not.toBeChecked();
     expect(submitOrderButton).toBeDisabled();
+  });
+
+  test("popover responds to hover", () => {
+    render(<SummaryForm />);
+
+    // popover starts out hidden
+
+    // popover appears on mouseover of checkbox label
+
+    // popover disappears when we mouse out
   });
 });
