@@ -118,3 +118,28 @@
 - `userEvent` more appropriate
 - Install `npm install @testing-library/user-event @testing-library/dom -D`
 - Recommended to use `userEvent` over `fireEvent`
+
+# Lesson 38: Screen Query Methods
+
+- Parts of method: `command[All]ByQueryType`
+
+  - _command_
+    - `get`: expect element to be in DOM
+    - `query`: expect element _not_ to be in DOM
+    - `find`: expect element to appear async
+  - _[All]_
+    - (exclude) expect only one match
+    - (include) expect more than one match
+  - _QueryType_
+    - `Role` (most preferred)
+    - `AltText` (images)
+    - `Text` (display elements)
+    - Form elements
+      - `PlaceholderText`
+      - `LabelText`
+      - `DisplayValue`
+
+- screen Query Reference
+  - https://testing-library.com/docs/queries/about/
+  - https://testing-library.com/docs/react-testing-library/cheatsheet/
+  - https://testing-library.com/docs/queries/about/#priority
