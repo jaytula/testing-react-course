@@ -143,3 +143,17 @@
   - https://testing-library.com/docs/queries/about/
   - https://testing-library.com/docs/react-testing-library/cheatsheet/
   - https://testing-library.com/docs/queries/about/#priority
+
+# Lesson 41: "Not wrapped in act(...)" Error, Async Disappearance
+
+- React updated element after test was finished
+- Don't want to follow the advice to wrap in `act(...)`
+  - Testing Library already does this for us!
+  - https://testing-library.com/docs/preact-testing-library/api#act
+- To remedy this error:
+  - Determine what changes after the test is over (async)
+  - Accounting for the change in test by:
+    - awaiting the change, and
+    - asserting on it
+  - More info: https://kentcdodds.com/blog/fix-the-not-wrapped-in-act-warning
+- waitForElementToBeRemoved
