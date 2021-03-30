@@ -157,3 +157,19 @@
     - asserting on it
   - More info: https://kentcdodds.com/blog/fix-the-not-wrapped-in-act-warning
 - waitForElementToBeRemoved
+
+# Lesson 43 OrderEntry Server Data Introduction
+
+- `OrderEntry` component has subcomponents:
+  - Scoops `Options` - Chocolate, Vanilla, Mint Chip
+    - 3x `ScoopOption` component
+  - Toppings `Options` - Gummi bears, Cherries, M&Ms, Hot Fudge
+    - 4x `ToppingOption` component
+
+## Tests
+
+- Test that option images render
+- Mock Service Worker
+- Mock server response for `/scoops` and `/toppings`
+  - write "scoops" code together
+  - "toppings" code as code quiz
