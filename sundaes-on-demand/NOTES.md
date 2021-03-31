@@ -173,3 +173,45 @@
 - Mock server response for `/scoops` and `/toppings`
   - write "scoops" code together
   - "toppings" code as code quiz
+
+# Lesson 44 Introduction to Mock Service Worker and Handlers
+
+- Purpose:
+  - intercept network calls
+  - return specified responses
+- Prevents network calls during tests
+- Set up test conditions using server response
+
+## Mock Service Worker Setup
+
+- `npm install msw`
+- Create handlers
+- Create test server
+- Make sure test server lsitens during all tests
+  - reset after each test
+
+## Mocking REST API
+
+https://mswjs.io/docs/getting-started/mocks/rest-api
+
+```js
+// src/mocks/handlers.js
+import { rest } from "msw";
+
+export const handlers = [
+  rest.get("https://localhost:3030/scoops", (req, res, ctx) => {
+    ctx.json([
+      { name: "Chocolate", imagePath: "/images/chocolate.png" },
+      { name: "Vanilla", imagePath: "/images/vanilla.png" },
+    ]);
+  }),
+];
+```
+
+- Handler Type: `rest` or `graphql`
+  - HTTP method to mock: `get`, `post`, etc.
+    - Full URL to mock
+      - Response resolver function
+        - `req`: request object
+        - `res`: function to create response
+        - `ctx`: utility to build response
