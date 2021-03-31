@@ -215,3 +215,17 @@ export const handlers = [
         - `req`: request object
         - `res`: function to create response
         - `ctx`: utility to build response
+
+# Lesson 45 Setting up the Mock Service Worker
+
+```js
+# src/mocks/server.js
+
+import {setupServer} from 'msw/node'
+import { handlers } from './handlers'
+
+// This configures a request mocking server with the given request
+export const server = setupServer(...handlers)
+```
+
+- https://mswjs.io/docs/getting-started/integrate/node
