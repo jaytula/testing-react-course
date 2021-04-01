@@ -229,3 +229,8 @@ export const server = setupServer(...handlers)
 ```
 
 - https://mswjs.io/docs/getting-started/integrate/node
+
+# Lesson 46 Tests with Mock Service Worker: Scoop Options
+
+- Will be testing when the `Options` component calls the scoops endpoint on the
+  server, it takes that data and displays them as `ScoopOptions`
