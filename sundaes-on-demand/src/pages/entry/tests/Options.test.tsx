@@ -3,13 +3,13 @@ import { render, screen } from "@testing-library/react";
 import Options from "../Options";
 
 describe("Options test", () => {
-  test("displays image for each scoop option from server", () => {
+  test("displays image for each scoop option from server", async () => {
     render(<Options optionType="scoops" />);
 
     // find images
-    const scoopImages = screen.getAllByRole("img", {
+    const scoopImages = (await screen.findAllByRole("img", {
       name: /scoop$/i,
-    }) as HTMLImageElement[];
+    })) as HTMLImageElement[];
     expect(scoopImages).toHaveLength(2);
 
     // confirm alt text

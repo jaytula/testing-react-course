@@ -13,11 +13,10 @@ const Options: React.FC<Props> = ({ optionType }) => {
     axios
       .get(`http://localhost:3030/${optionType}`)
       .then((res) => {
-        console.log(res.data);
         setItems(res.data);
       })
       .catch((err) => {
-        console.log(err);
+        console.log("Houston we got a problem");
       });
   }, [optionType]);
 
