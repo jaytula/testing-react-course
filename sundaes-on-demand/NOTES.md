@@ -234,3 +234,32 @@ export const server = setupServer(...handlers)
 
 - Will be testing when the `Options` component calls the scoops endpoint on the
   server, it takes that data and displays them as `ScoopOptions`
+
+# Lesson 48 Code Quiz! Topping Options from Server
+
+- Mock Service Worker mimics response from server
+  - create handler
+  - create server
+  - update _setupTests_ to listen for requests
+- `getAllByRole`
+  - search for more than one match to role
+- `await findAllByRole`
+
+  - for asynchronous DOM update of elements
+
+- Use scoops as a model
+  - type out rather than copy/paste for better learning
+- add handler for `/toppings` route
+- Handler can return three toppings:
+
+```
+[
+  { name: 'Cherries', imagePath: '/images/cherries.png' },
+  { name: 'M&Ms', imagePath: '/images/m-and-ms.png'},
+  { name: 'Hot fudge', 'imagePath: '/images/hot-fudge.png' },
+]
+```
+
+- Write tests in `Options.test.jsx`
+- `name` option can be `/topping$/i`
+- Update `Options.jsx` and create `ToppingOption.jsx`
