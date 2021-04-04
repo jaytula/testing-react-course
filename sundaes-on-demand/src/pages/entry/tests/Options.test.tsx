@@ -16,4 +16,21 @@ describe("Options test", () => {
     const altText = scoopImages.map((element) => element.alt);
     expect(altText).toEqual(["Chocolate scoop", "Vanilla scoop"]);
   });
+
+  test("display image for each topping option from server", async () => {
+    render(<Options optionType="toppings" />);
+
+    // find images
+    const toppingImages = (await screen.findAllByRole("img", {
+      name: /topping$/i,
+    })) as HTMLImageElement[];
+    expect(toppingImages.length).toBe(3);
+
+    const altText = toppingImages.map((el) => el.alt);
+    expect(altText).toEqual([
+      "Cherries topping",
+      "M&Ms topping",
+      "Hot fudge topping",
+    ]);
+  });
 });

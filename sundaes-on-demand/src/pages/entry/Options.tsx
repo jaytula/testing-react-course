@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import ScoopOption from "./ScoopOption";
+import ToppingOption from "./ToppingOption";
+
 import Row from "react-bootstrap/Row";
 
 type Props = {
@@ -30,7 +32,13 @@ const Options: React.FC<Props> = ({ optionType }) => {
               imagePath={item.imagePath}
             />
           ))
-        : null}
+        : items.map((item) => (
+            <ToppingOption
+              key={item.name}
+              name={item.name}
+              imagePath={item.imagePath}
+            />
+          ))}
     </Row>
   );
 };
