@@ -263,3 +263,24 @@ export const server = setupServer(...handlers)
 - Write tests in `Options.test.jsx`
 - `name` option can be `/topping$/i`
 - Update `Options.jsx` and create `ToppingOption.jsx`
+
+# Lesson 50 Error Server Response Planning
+
+- Fill in that `catch` statement we left as TODO
+- Display AlertBanner component if `axios` call throws error
+  - instead of content from server
+- Use simple `react-bootstrap` alert
+  - https://react-bootstrap.github.io/components/alerts/
+  - role: `alert`
+- By default, handlers return non-error response
+  - Override with error response for particular tests
+
+## Jest Debugging Tools
+
+- Jest debugging tools in this section
+
+  - running only one test file
+  - running only one test within a file
+
+- To give us something to debug:
+  - Going to write code I know won't pass
