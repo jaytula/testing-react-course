@@ -4,12 +4,14 @@ import ScoopOption from "./ScoopOption";
 import ToppingOption from "./ToppingOption";
 
 import Row from "react-bootstrap/Row";
+import AlertBanner from "../common/AlertBanner";
 
 type Props = {
   optionType: "scoops" | "toppings";
 };
 const Options: React.FC<Props> = ({ optionType }) => {
   const [items, setItems] = useState<{ name: string; imagePath: string }[]>([]);
+  const [error, setError] = useState<boolean>(false);
 
   useEffect(() => {
     axios
@@ -18,9 +20,13 @@ const Options: React.FC<Props> = ({ optionType }) => {
         setItems(res.data);
       })
       .catch((err) => {
-        console.log("Houston we got a problem");
+        setError(true);
       });
   }, [optionType]);
+
+  if (error) {
+    return <AlertBanner />;
+  }
 
   return (
     <Row>
