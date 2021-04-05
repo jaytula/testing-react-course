@@ -284,3 +284,5 @@ export const server = setupServer(...handlers)
 
 - To give us something to debug:
   - Going to write code I know won't pass
+
+# Lesson 51 Simulating Server Error Response in Tests
