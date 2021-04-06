@@ -290,3 +290,11 @@ export const server = setupServer(...handlers)
 # Lesson 53 Running only Selected Tests and `waitFor`
 
 - Use `test.only('test description', () => {})` to restricting
+
+# Lesson 54 Review: Server Error Response and Test Debugging
+
+- Override Mock Service Worker response for individual tests (e.g. `server.resetHandlers`)
+- Misleading _Unable to find role="alert"_ error
+- Isolate file by typing `p` in Jest watch mode
+- Isolate test withing file with `test.only` or `test.skip`
+- `waitFor` for tests where `await findBy*` is not enough
