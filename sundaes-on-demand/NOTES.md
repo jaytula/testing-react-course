@@ -286,3 +286,7 @@ export const server = setupServer(...handlers)
   - Going to write code I know won't pass
 
 # Lesson 51 Simulating Server Error Response in Tests
+
+# Lesson 53 Running only Selected Tests and `waitFor`
+
+- Use `test.only('test description', () => {})` to restricting
