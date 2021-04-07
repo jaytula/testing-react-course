@@ -298,3 +298,10 @@ export const server = setupServer(...handlers)
 - Isolate file by typing `p` in Jest watch mode
 - Isolate test withing file with `test.only` or `test.skip`
 - `waitFor` for tests where `await findBy*` is not enough
+
+# Lesson 55 Intro to Tests for Total and Subtotals
+
+- Will be using React Context but it doesn't really matter test-wise
+- There is a subtotal for Scoops section (test in `Options`)
+- There is a subtotal for Topping section (test in `Options`)
+- There is a grand total which is the sum of the two subtotals (test in `OrderEntry`)
