@@ -1,15 +1,18 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState, Fragment } from "react";
 import ScoopOption from "./ScoopOption";
 import ToppingOption from "./ToppingOption";
 
 import Row from "react-bootstrap/Row";
 import AlertBanner from "../common/AlertBanner";
+import { pricePerItem } from "../../constants";
+import { useOrderDetails } from "../../contexts/OrderDetails";
 
 type Props = {
   optionType: "scoops" | "toppings";
 };
 const Options: React.FC<Props> = ({ optionType }) => {
+  const { updateItemCount, totals } = useOrderDetails();
   const [items, setItems] = useState<{ name: string; imagePath: string }[]>([]);
   const [error, setError] = useState<boolean>(false);
 
@@ -28,24 +31,39 @@ const Options: React.FC<Props> = ({ optionType }) => {
     return <AlertBanner />;
   }
 
+  const title = optionType.toUpperCase() + optionType.slice(1);
+
   return (
-    <Row>
-      {optionType === "scoops"
-        ? items.map((item) => (
-            <ScoopOption
-              key={item.name}
-              name={item.name}
-              imagePath={item.imagePath}
-            />
-          ))
-        : items.map((item) => (
-            <ToppingOption
-              key={item.name}
-              name={item.name}
-              imagePath={item.imagePath}
-            />
-          ))}
-    </Row>
+    <Fragment>
+      <h2>{title}</h2>
+      <p>{pricePerItem[optionType]} each</p>
+      <p>
+        {title} total: {totals[optionType]}
+      </p>
+      <Row>
+        {optionType === "scoops"
+          ? items.map((item) => (
+              <ScoopOption
+                key={item.name}
+                name={item.name}
+                imagePath={item.imagePath}
+                updateItemCount={(name: string, count: string) => {
+                  updateItemCount(name, count, "scoops");
+                }}
+              />
+            ))
+          : items.map((item) => (
+              <ToppingOption
+                key={item.name}
+                name={item.name}
+                imagePath={item.imagePath}
+                updateItemCount={(name: string, count: string) => {
+                  updateItemCount(name, count, "toppings");
+                }}
+              />
+            ))}
+      </Row>
+    </Fragment>
   );
 };
 

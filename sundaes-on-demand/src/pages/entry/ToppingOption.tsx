@@ -3,6 +3,7 @@ import Col from "react-bootstrap/Col";
 interface Props {
   name: string;
   imagePath: string;
+  updateItemCount: (name: string, count: string) => void;
 }
 
 const ToppingOption: React.FC<Props> = ({ name, imagePath }) => {
