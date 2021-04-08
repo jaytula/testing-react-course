@@ -305,3 +305,23 @@ export const server = setupServer(...handlers)
 - There is a subtotal for Scoops section (test in `Options`)
 - There is a subtotal for Topping section (test in `Options`)
 - There is a grand total which is the sum of the two subtotals (test in `OrderEntry`)
+
+# Lesson 57 OPTIONAL React Code: OrderDetails Context
+
+- A lot of cofing, quite complicated
+  - Easy to get lost in details
+- Focus of course is testing
+- Complicated app for realistic testing scenarios
+- Feel free to set this lecture aside
+
+- Kent C. Dodds to set up context with embedded state
+- https://kentcdodds.com/blog/application-state-management-with-react
+
+Two components will need the context:
+
+- OrderEntry
+- OrderSummary
+
+Create context file
+
+- `/src/contexts/OrderDetails.tsx`
