@@ -16,16 +16,7 @@ export const OrderDetails = createContext<{
   ) => void;
   scoops: Map<string, number>;
   toppings: Map<string, number>;
-}>({
-  totals: {
-    scoops: 0,
-    toppings: 0,
-    grandTotal: 0,
-  },
-  updateItemCount: (itemName, newItemCount, optionType) => {},
-  scoops: new Map(),
-  toppings: new Map(),
-});
+} | null>(null);
 
 // create custom hook to check whether we're inside a provider
 export function useOrderDetails() {
