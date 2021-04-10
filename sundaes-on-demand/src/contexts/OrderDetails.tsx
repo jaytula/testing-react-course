@@ -53,13 +53,11 @@ export const OrderDetailsProvider: React.FC = (props) => {
 
   useEffect(() => {
     const scoopsSubtotal =
-      Object.values(optionCounts.scoops).reduce((acc, curr) => acc + curr, 0) *
+      [...optionCounts.scoops.values()].reduce((acc, curr) => acc + curr, 0) *
       pricePerItem.scoops;
     const toppingsSubtotal =
-      Object.values(optionCounts.toppings).reduce(
-        (acc, curr) => acc + curr,
-        0
-      ) * pricePerItem.toppings;
+      [...optionCounts.toppings.values()].reduce((acc, curr) => acc + curr, 0) *
+      pricePerItem.toppings;
     const grandTotal = scoopsSubtotal + toppingsSubtotal;
 
     setTotals({
@@ -77,7 +75,7 @@ export const OrderDetailsProvider: React.FC = (props) => {
     ) => {
       const newOptionCounts = { ...optionCounts };
 
-      const optionCountsMap = optionCounts[optionType];
+      const optionCountsMap = newOptionCounts[optionType];
       optionCountsMap.set(itemName, parseInt(newItemCount));
 
       setOptionCounts(newOptionCounts);

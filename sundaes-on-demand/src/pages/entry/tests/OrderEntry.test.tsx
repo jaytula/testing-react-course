@@ -2,6 +2,7 @@ import { render, screen, waitFor } from "@testing-library/react";
 import OrderEntry from "../OrderEntry";
 import { rest } from "msw";
 import { server } from "../../../mocks/server";
+import { OrderDetailsProvider } from "../../../contexts/OrderDetails";
 
 test("handles error for scoops and topping routes", async () => {
   server.resetHandlers(
@@ -13,7 +14,7 @@ test("handles error for scoops and topping routes", async () => {
     })
   );
 
-  render(<OrderEntry />);
+  render(<OrderEntry />, { wrapper: OrderDetailsProvider });
 
   await waitFor(async () => {
     const alerts = await screen.findAllByRole("alert");

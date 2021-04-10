@@ -22,7 +22,7 @@ const ScoopOption: React.FC<Props> = ({ name, imagePath, updateItemCount }) => {
       <Form.Group
         controlId={`${name}-count`}
         as={Row}
-        tyle={{ marginTop: "10px" }}
+        style={{ marginTop: "10px" }}
       >
         <Form.Label column xs="6" style={{ textAlign: "right" }}>
           {name}
