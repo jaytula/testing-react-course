@@ -325,3 +325,15 @@ Two components will need the context:
 Create context file
 
 - `/src/contexts/OrderDetails.tsx`
+
+# Lesson 61: Review: Scoops Subtotal with Context
+
+- `getByText` to find total
+  - `exact` option set to `false`
+- number inputs
+  - `await` and `findBy` (coming from server async)
+  - spinbutton _role_
+  - `userEvent.clear` to clear exiting text
+  - `userEvent.type` to enter number
+- `wrapper` option to `render` to apply context provider
+- Redfine Testing Library `render` to access universally
