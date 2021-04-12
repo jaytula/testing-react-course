@@ -346,7 +346,7 @@ Create context file
 - Look at the mockup for inputs
 
   - e.g `Toppings total: $4.50`
-  - Checkbox for `Gummi bears`, `Cherries`, `M&Ms`, and `Hot Fudge
+  - Checkbox for `Gummi bears`, `Cherries`, `M&Ms`, and `Hot Fudge`
 
 - Assert on default toppings subtotal
 - Find and tick one box, assert on updated subtotal
