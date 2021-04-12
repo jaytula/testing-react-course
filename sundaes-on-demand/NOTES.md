@@ -337,3 +337,35 @@ Create context file
   - `userEvent.type` to enter number
 - `wrapper` option to `render` to apply context provider
 - Redfine Testing Library `render` to access universally
+
+# Lesson 62: Code Quiz! Topping Subtotal
+
+- Write tests for topping subtotal
+- Not easy! Putting a lot of concepts together here
+- Tests can go in _src/pages/order/tests/totalUpdates.test.jsx_
+- Look at the mockup for inputs
+
+  - e.g `Toppings total: $4.50`
+  - Checkbox for `Gummi bears`, `Cherries`, `M&Ms`, and `Hot Fudge
+
+- Assert on default toppings subtotal
+- Find and tick one box, assert on updated subtotal
+  - See _/src/mock/handlers.js_ for server response (which toppings)
+  - use `await` and `find` for checkbox (async)
+- Tick another box on, assert on subtotal
+  - Make sure code can handle two simultanious boxes
+- Tick one of the boxes **off** (click it again) and assert on subtotal
+  - Make sure code can handle box checked and then un-checked
+
+Coding to pass tests
+
+- Would recommend using pre-written code on this one
+  - no need to learn react-bootstrap unless you want
+- If you choose to write code to validate that tests pass
+  - Should not have to make any cchanges to _Options.jsx_
+    - logic for counting items and calculating subtotal in _Options.jsx_ is already written
+    - re-usable without changes for toppings
+  - Call `updateItemCount`, with `1` (checkbox on) or `0` (checkbox off)
+- Update _ToppingOption.jsx_ to include names and checkboxes
+  - `onChange` handler
+  - use checkbox from _OrderSummary.jsx_ as a model
