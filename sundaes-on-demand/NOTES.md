@@ -369,3 +369,46 @@ Coding to pass tests
 - Update _ToppingOption.jsx_ to include names and checkboxes
   - `onChange` handler
   - use checkbox from _OrderSummary.jsx_ as a model
+
+# Lesson 64: Code Quiz! Grand Total
+
+- Subject matter for quiz is the _Grand Total_ on `OrderEntry` page
+- Should we do a "black box" test (not consider implementation)?
+- For example:
+  - First update scoops, then toppings
+  - Should we also test updating toppings first then scoops?
+  - We know from implementation that it shouldn't make a difference
+  - Users should be able to do either; and we might change implementation
+- Do test functions need to be `async`?
+  - Yes, options still need to load from server / mock service worker
+  - await both the scoop element **and** another await on the topping element
+    - they're separate operations and either could finish first
+
+## How to find element
+
+- From mockups, grand total should be the same size as titles (`<h2>`)
+  - we can search using the `heading` role
+    - include the text in the `name` option
+- Note: `{ exact: false }` is not an _option_ for `*byRole`
+  - Either use `*byRole` and regular expression for `name` option, or
+    - `screen.getByRole('heading', {name: /grand total: \$/i });`
+  - `*byText` and `{ exact: false }`
+    - `screen.getByText('Grand total: $', { exact: false })`
+
+## Ignore this error
+
+- The first test will show an error even when passing:
+
+```
+Warning: ?Can't perform a React state update on an unmounted
+component. This is a no-op, but it indicates a memory lead
+in your application
+```
+
+- Ignore for now; will address when we reconvene
+
+## Coding to pass tests
+
+- Add grand total to `OrderEntry.tsx`
+- Not a huge change
+  - add `<h2>` with grand total from context
