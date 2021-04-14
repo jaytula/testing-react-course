@@ -432,3 +432,5 @@ in your application
 
 - Add awaits to the end of the test to avoid errors
 - I don't love this
+
+# Lesson 66: What Should Functional Tests Catch? and Refactor

@@ -7,7 +7,7 @@ import Row from "react-bootstrap/Row";
 import AlertBanner from "../common/AlertBanner";
 import { pricePerItem } from "../../constants";
 import { useOrderDetails } from "../../contexts/OrderDetails";
-import { formatter } from "../../utils";
+import { formatCurrency } from "../../utils";
 
 type Props = {
   optionType: "scoops" | "toppings";
@@ -37,9 +37,9 @@ const Options: React.FC<Props> = ({ optionType }) => {
   return (
     <Fragment>
       <h2>{title}</h2>
-      <p>{pricePerItem[optionType]} each</p>
+      <p>{formatCurrency(pricePerItem[optionType])} each</p>
       <p>
-        {title} total: {formatter.format(totals[optionType])}
+        {title} total: {formatCurrency(totals[optionType])}
       </p>
       <Row>
         {optionType === "scoops"
