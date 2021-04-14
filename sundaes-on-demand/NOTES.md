@@ -412,3 +412,23 @@ in your application
 - Add grand total to `OrderEntry.tsx`
 - Not a huge change
   - add `<h2>` with grand total from context
+
+# Lesson 65: "Unmounted Component" Error
+
+## Options to remedy
+
+- Skip auto cleanup
+  - https://testing-library.com/docs/react-testing-library/setup/#skipping-auto-cleanup
+  - Not possible on a test-by-test basis
+  - not recommended
+- Mock useEffect to bypass server call
+  - Not recommended, farther from production code path
+- Include in the begginning of a test that asserts on state changes
+  - One that awaits state changes
+    - happen on axios promise resolution
+  - Don't need to include in all tests because it only needs to be tested once
+
+## What is there is no test?
+
+- Add awaits to the end of the test to avoid errors
+- I don't love this
