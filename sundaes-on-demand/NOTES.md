@@ -434,3 +434,24 @@ in your application
 - I don't love this
 
 # Lesson 66: What Should Functional Tests Catch? and Refactor
+
+# Lesson 67: Introduction to Final Exam: Order Phases
+
+## App orderPhase State
+
+- App passes state setter (`setOrderPhase`) to components as prop
+- Components call `setOrderPhase` to move to next phase
+  - `inProgress` on `OrderEntry` page
+  - `review` on `OrderSummary` page
+  - `complete` on `OrderConfirmation` page
+
+## What to Test
+
+- "Happy path" (aka "Happy Day" or "Golden Path") test
+  - Tests that execute customer flow without error
+- For our app:
+  - Create order
+  - Accept terms and submit
+  - Click "new order" on confirmation page
+- Don't need to test different combinations of orders
+  - Covered in order page testing
