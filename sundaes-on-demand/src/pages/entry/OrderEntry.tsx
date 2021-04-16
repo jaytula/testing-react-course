@@ -2,7 +2,7 @@ import { useOrderDetails } from "../../contexts/OrderDetails";
 import { formatCurrency } from "../../utils";
 import Options from "./Options";
 
-const OrderEntry = () => {
+const OrderEntry: React.FC<{ nextPhase: () => void }> = ({ nextPhase }) => {
   const {
     totals: { grandTotal },
   } = useOrderDetails();
@@ -10,7 +10,9 @@ const OrderEntry = () => {
     <div>
       <Options optionType="scoops" />
       <Options optionType="toppings" />
-      <h2>Grand Total: ${formatCurrency(grandTotal)}</h2>
+      <h2>Grand Total: {formatCurrency(grandTotal)}</h2>
+
+      <button onClick={nextPhase}>Order Now</button>
     </div>
   );
 };

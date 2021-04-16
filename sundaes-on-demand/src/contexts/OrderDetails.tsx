@@ -16,6 +16,7 @@ export const OrderDetails = createContext<{
   ) => void;
   scoops: Map<string, number>;
   toppings: Map<string, number>;
+  clearCart: () => void;
 } | null>(null);
 
 // create custom hook to check whether we're inside a provider
@@ -51,6 +52,13 @@ export const OrderDetailsProvider: React.FC = (props) => {
     grandTotal: 0,
   });
 
+  const clearCart = () => {
+    setOptionCounts({
+      scoops: new Map<string, number>(),
+      toppings: new Map<string, number>(),
+    });
+  };
+
   useEffect(() => {
     const scoopsSubtotal =
       [...optionCounts.scoops.values()].reduce((acc, curr) => acc + curr, 0) *
@@ -82,7 +90,7 @@ export const OrderDetailsProvider: React.FC = (props) => {
     };
     // getter: object containing option coutns for scoops and toppings, subtotal, total
     // setter: updateOptionCount
-    return { ...optionCounts, totals, updateItemCount };
+    return { ...optionCounts, totals, updateItemCount, clearCart };
   }, [optionCounts, totals]);
   return (
     <OrderDetails.Provider value={value} {...props}>

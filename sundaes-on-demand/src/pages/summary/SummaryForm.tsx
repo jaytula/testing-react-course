@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Button, Form, OverlayTrigger, Popover } from "react-bootstrap";
+import { useOrderDetails } from "../../contexts/OrderDetails";
 
-const SummaryForm = () => {
+const SummaryForm: React.FC<{ nextPhase?: () => void }> = ({ nextPhase }) => {
+  const { clearCart } = useOrderDetails();
   const [checked, setChecked] = useState<boolean>(false);
 
   const popover = (
@@ -13,14 +15,24 @@ const SummaryForm = () => {
   const checkboxLabel = (
     <span>
       I agree to{" "}
-      <OverlayTrigger placement="right" overlay={popover}>
-        <span style={{ color: "blue" }}>Terms and Conditions</span>
-      </OverlayTrigger>
+      {false ? (
+        <OverlayTrigger placement="right" overlay={popover}>
+          <span style={{ color: "blue" }}>Terms and Conditions</span>
+        </OverlayTrigger>
+      ) : (
+        "Terms and conditions"
+      )}
     </span>
   );
 
+  const onSubmit: React.FormEventHandler = (event) => {
+    event.preventDefault();
+    clearCart();
+    if (nextPhase) nextPhase();
+  };
+
   return (
-    <Form>
+    <Form onSubmit={onSubmit}>
       <Form.Group controlId="terms-and-conditions">
         <Form.Check
           type="checkbox"
