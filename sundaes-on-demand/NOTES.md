@@ -455,3 +455,16 @@ in your application
   - Click "new order" on confirmation page
 - Don't need to test different combinations of orders
   - Covered in order page testing
+
+# Lesson 68 Adding a New Handler: Copy/Paste Warning
+
+- POST order to server
+  - implemententation: call POST via `useEffect` in `OrderConfirmation`
+    - make up format of the data sent to server, or send or data
+    - server simply generates random order number and sends it back as JSON
+  - mimic POST for order confirmation with Mock Service Worker
+- Warning about using copy/paste to create new handler
+  - I do this all the time
+  - If you do, be sure to change the method from `get` to `post`
+  - If you neglect to do this, it's very difficult to track down!
+    - Will get error like `Error: connect ECONNREFUSED 127.0.0.1`
