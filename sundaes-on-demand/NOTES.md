@@ -468,3 +468,31 @@ in your application
   - If you do, be sure to change the method from `get` to `post`
   - If you neglect to do this, it's very difficult to track down!
     - Will get error like `Error: connect ECONNREFUSED 127.0.0.1`
+
+# Lesson 69 Debugging Tips
+
+- `screen.debug()` - Prints out what the DOM looks like
+- Does `getBy*` fail when there a server call or async action?
+  - need to use `await findBy*`
+- Read test error output carefully
+  - don't get intimidated by huge walls of text!
+  - exactly which assertion is failing?
+  - copy/paste errors into web search
+- Try pre-written code to se whether your tests or code are the issue
+  - Clearly not a viable option in real life, but useful tool while learning
+
+## Resolving errors from Tests
+
+- `Unable to find role="role"` - Either role (for example, `button`) doesn't exist, or no element with 
+  that role that also matches the `name` option
+- `Warning: An update to component inside a test was not wrapped in in act(...)` - There was an
+  update to the component after the test completed. Use `await findBy*`
+- `Warning: Can't perform a React state update on an unmounted component. This is a no-op...` - There
+  was an update to the component state after the test completed. Use `await findBy*`
+- `Error: conect ECONNREFUED 127.0.0.1` - There is no Mock Service Worker handler associated with this
+  route and method
+
+## Compare with Working Code
+
+- copy/paste working code and comment your code
+- if the copy/paste coded works then what's different in your code?
