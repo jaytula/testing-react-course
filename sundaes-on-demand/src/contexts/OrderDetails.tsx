@@ -4,6 +4,8 @@ import React, {
   useState,
   useMemo,
   useEffect,
+  Dispatch,
+  SetStateAction,
 } from "react";
 import { pricePerItem } from "../constants";
 
@@ -17,6 +19,8 @@ export const OrderDetails = createContext<{
   scoops: Map<string, number>;
   toppings: Map<string, number>;
   clearCart: () => void;
+  orderNumber: number;
+  setOrderNumber: Dispatch<SetStateAction<number>>;
 } | null>(null);
 
 // create custom hook to check whether we're inside a provider
@@ -51,6 +55,7 @@ export const OrderDetailsProvider: React.FC = (props) => {
     toppings: 0,
     grandTotal: 0,
   });
+  const [orderNumber, setOrderNumber] = useState<number>(0);
 
   const clearCart = () => {
     setOptionCounts({
@@ -90,8 +95,15 @@ export const OrderDetailsProvider: React.FC = (props) => {
     };
     // getter: object containing option coutns for scoops and toppings, subtotal, total
     // setter: updateOptionCount
-    return { ...optionCounts, totals, updateItemCount, clearCart };
-  }, [optionCounts, totals]);
+    return {
+      ...optionCounts,
+      totals,
+      updateItemCount,
+      clearCart,
+      setOrderNumber,
+      orderNumber,
+    };
+  }, [optionCounts, totals, orderNumber, setOrderNumber]);
   return (
     <OrderDetails.Provider value={value} {...props}>
       {props.children}
