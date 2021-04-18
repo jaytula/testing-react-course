@@ -483,7 +483,7 @@ in your application
 
 ## Resolving errors from Tests
 
-- `Unable to find role="role"` - Either role (for example, `button`) doesn't exist, or no element with 
+- `Unable to find role="role"` - Either role (for example, `button`) doesn't exist, or no element with
   that role that also matches the `name` option
 - `Warning: An update to component inside a test was not wrapped in in act(...)` - There was an
   update to the component after the test completed. Use `await findBy*`
@@ -496,3 +496,23 @@ in your application
 
 - copy/paste working code and comment your code
 - if the copy/paste coded works then what's different in your code?
+
+# Lesson 70: React Hints for Order Phase Coding
+
+- State with `orderNumber, starts out null
+- If `orderNumber` is `null`, display "Loading"
+  - test "Loading" as optional practice
+- `useEffect` to call axios when component mounts
+  - Set `orderNumber` to axios response
+  - Leve error as "TODO" (optional extra practice)
+
+## React Coding Hints
+
+- Keep `orderPhase` In App-level state
+  - page setter to top-level page components
+  - `orderPhase` value determines which page component to display
+  - for simplicity, wrap everything in context provider
+- buttons that update `orderPhase` state in pages
+  - clicking button calls setter from prop
+- reset context `Maps` after clicking "New Order" button
+  - context needs additional array item `resetOrder`
