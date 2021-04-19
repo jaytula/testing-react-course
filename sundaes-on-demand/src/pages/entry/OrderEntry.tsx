@@ -12,7 +12,7 @@ const OrderEntry: React.FC<{ nextPhase: () => void }> = ({ nextPhase }) => {
       <Options optionType="toppings" />
       <h2>Grand Total: {formatCurrency(grandTotal)}</h2>
 
-      <button onClick={nextPhase}>Order Now</button>
+      <button onClick={nextPhase}>Order Sundae</button>
     </div>
   );
 };

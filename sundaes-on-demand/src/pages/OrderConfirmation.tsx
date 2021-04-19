@@ -7,7 +7,7 @@ const OrderConfirmation: React.FC<{ nextPhase: () => void }> = ({
 
   return (
     <div>
-      <h1>Order Confirmation</h1>
+      <h1>Thank You</h1>
 
       <p>Order Number: {orderNumber}</p>
 
