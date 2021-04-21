@@ -18,7 +18,7 @@ export const OrderDetails = createContext<{
   ) => void;
   scoops: Map<string, number>;
   toppings: Map<string, number>;
-  clearCart: () => void;
+  resetOrder: () => void;
   orderNumber: number;
   setOrderNumber: Dispatch<SetStateAction<number>>;
 } | null>(null);
@@ -57,7 +57,7 @@ export const OrderDetailsProvider: React.FC = (props) => {
   });
   const [orderNumber, setOrderNumber] = useState<number>(0);
 
-  const clearCart = () => {
+  const resetOrder = () => {
     setOptionCounts({
       scoops: new Map<string, number>(),
       toppings: new Map<string, number>(),
@@ -99,7 +99,7 @@ export const OrderDetailsProvider: React.FC = (props) => {
       ...optionCounts,
       totals,
       updateItemCount,
-      clearCart,
+      resetOrder,
       setOrderNumber,
       orderNumber,
     };

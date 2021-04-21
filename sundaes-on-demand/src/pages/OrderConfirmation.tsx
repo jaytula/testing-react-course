@@ -5,11 +5,13 @@ const OrderConfirmation: React.FC<{ nextPhase: () => void }> = ({
 }) => {
   const {orderNumber} = useOrderDetails();
 
+  if(!orderNumber) return <div>Loading</div>
+
   return (
-    <div>
+    <div style={{ textAlign: 'center'}}>
       <h1>Thank You</h1>
 
-      <p>Order Number: {orderNumber}</p>
+      <p>Your order number is {orderNumber}</p>
 
       <button onClick={nextPhase}>Create New Order</button>
     </div>
