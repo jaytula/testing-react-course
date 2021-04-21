@@ -516,3 +516,28 @@ in your application
   - clicking button calls setter from prop
 - reset context `Maps` after clicking "New Order" button
   - context needs additional array item `resetOrder`
+
+# Lesson 73: Jest Mock Functions as Props
+
+- Added a prop to lop level page components
+  - `setOrderPhase
+- Other components also have functions as props
+  - `updateItemCount` for the ScoopOption / ToppingOption components
+- May need to pass as prop when rendering in tests
+  - TypeScript, PropTypes or other prop validators will require
+  - Or will get called in tests, but doesn't matter for test
+    - Testing that scoop count is invalid  wil call `updateItemCount`
+
+- How to pass when rendering component in test?
+- `jest.fn()`
+  - Jest mock function
+  - Does not do anything
+  - Merely a placeholder to avoid errors
+- Example:
+
+```jsx
+<ScoopOption
+  name="Vanilla"
+  imagePath="/images/vanilla.jpg"
+  updateItemCount={jest.fn()} />
+```
