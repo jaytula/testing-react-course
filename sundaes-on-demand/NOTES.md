@@ -558,3 +558,39 @@ in your application
   - jest-dom assertion `toHaveClass` (*Validate scoop count value*)
 - Practice using Jest mock `jest.fn()` as a placeholder for function prop
 - Guidelines for questions when creating new tests
+
+## Lesson 75. Standard Questions for New Tests and Introduction to Exercises
+
+### Standard Questions to Ask
+
+- What to render?
+  - what's the smallest component that encompasses tests?
+- Do we need to pass any props?
+- Do we need to wrap in say, `OrderDetailsProvider`?
+  - Does the provider get used? Is it already wrapped within the component?
+- Where should the tests go?
+  - which file? New file needed?
+- What to test?
+  - What's the behavior that needs testing?
+- How to test?
+  - What queries and events!
+- Do we need to `await`?
+  - Is there anything async going on?
+
+### Exercises in this Section
+
+- Confirm "Loading" shows while contacting server
+  - async events
+  - check that element disappears from DOM
+- Optionally show "Toppings" on summary page
+  - "happy path" test with different path
+  - confirm element is not on page
+- Disable order button if no scoops are ordered
+  - conditions for button to be enabled
+- Validate scoop count value
+  - Jest mock function passed as prop
+  - jest-dom `toHaveClass` assertion
+- Don't update total if scoop count is invalid
+  - minimum component to test
+- Show alert for error when submitting order
+  - error response from server
