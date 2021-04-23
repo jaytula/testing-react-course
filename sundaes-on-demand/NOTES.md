@@ -541,3 +541,20 @@ in your application
   imagePath="/images/vanilla.jpg"
   updateItemCount={jest.fn()} />
 ```
+
+## Lesson 74: Final Exam and Introduction to Optional Practice
+
+- Troubleshooting techniques
+  - `screen.debug()` - prints out DOM structure
+  - reading test error output carefully
+  - probable causes for common errors
+- Passing a function as prop: `jest.fn()`
+
+### More Practice
+
+- All code quiz!
+- Adding more functionality to make app more realistic
+- One minor concept not introduced yet
+  - jest-dom assertion `toHaveClass` (*Validate scoop count value*)
+- Practice using Jest mock `jest.fn()` as a placeholder for function prop
+- Guidelines for questions when creating new tests
