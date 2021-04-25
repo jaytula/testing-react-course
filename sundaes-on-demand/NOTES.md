@@ -608,3 +608,21 @@ in your application
   - https://testing-library.com/docs/react-testing-library/cheatsheet
 - This is not TDD since code is already written
   - didn't want to add this to final exam, so much going on already!
+
+## Lesson 77. Conditional Topping Section on Summary Page
+
+- Don't display toppings heading on summary page if no toppings are ordered
+- Similar to "final example happy path" test
+  - new test, since outcome is different
+
+### Standard Questions
+
+1. What to render?  happy path usually means App
+2. Pass props? No App has no props
+3. Wrap render? No App already wraps within component
+4. Which file for tests? `orderPhase.test.jsx` works; moving from one phase to another
+5. What to tests?
+  - Toppings header is not there
+  - Anything else? No hard-and-fast right answers here!
+6. How to test?  Which query to assert something's **not** on the page!
+7. Do we need to async / await? Is there anything async going on?
