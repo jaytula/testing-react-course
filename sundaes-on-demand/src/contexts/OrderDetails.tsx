@@ -4,8 +4,6 @@ import React, {
   useState,
   useMemo,
   useEffect,
-  Dispatch,
-  SetStateAction,
 } from "react";
 import { pricePerItem } from "../constants";
 

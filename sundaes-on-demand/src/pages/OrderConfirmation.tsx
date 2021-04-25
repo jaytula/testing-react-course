@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useOrderDetails } from "../contexts/OrderDetails";
 
 const OrderConfirmation: React.FC<{ nextPhase: () => void }> = ({
   nextPhase,
