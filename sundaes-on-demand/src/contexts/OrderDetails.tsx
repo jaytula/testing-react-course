@@ -19,8 +19,6 @@ export const OrderDetails = createContext<{
   scoops: Map<string, number>;
   toppings: Map<string, number>;
   resetOrder: () => void;
-  orderNumber: number;
-  setOrderNumber: Dispatch<SetStateAction<number>>;
 } | null>(null);
 
 // create custom hook to check whether we're inside a provider
@@ -55,7 +53,6 @@ export const OrderDetailsProvider: React.FC = (props) => {
     toppings: 0,
     grandTotal: 0,
   });
-  const [orderNumber, setOrderNumber] = useState<number>(0);
 
   const resetOrder = () => {
     setOptionCounts({
@@ -100,10 +97,8 @@ export const OrderDetailsProvider: React.FC = (props) => {
       totals,
       updateItemCount,
       resetOrder,
-      setOrderNumber,
-      orderNumber,
     };
-  }, [optionCounts, totals, orderNumber, setOrderNumber]);
+  }, [optionCounts, totals]);
   return (
     <OrderDetails.Provider value={value} {...props}>
       {props.children}

@@ -1,14 +1,26 @@
+import { useEffect, useState } from "react";
 import { useOrderDetails } from "../contexts/OrderDetails";
 
 const OrderConfirmation: React.FC<{ nextPhase: () => void }> = ({
   nextPhase,
 }) => {
-  const {orderNumber} = useOrderDetails();
+  const [orderNumber, setOrderNumber] = useState<number>(0);
 
-  if(!orderNumber) return <div>Loading</div>
+  useEffect(() => {
+    fetch("http://localhost:3030/order", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+    })
+      .then(res => res.json())
+      .then(data => {
+        setOrderNumber(data.orderNumber);
+      });
+  }, []);
+
+  if (!orderNumber) return <div>Loading</div>;
 
   return (
-    <div style={{ textAlign: 'center'}}>
+    <div style={{ textAlign: "center" }}>
       <h1>Thank You</h1>
 
       <p>Your order number is {orderNumber}</p>

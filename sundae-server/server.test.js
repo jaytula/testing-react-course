@@ -60,14 +60,5 @@ describe("test server", () => {
           expect(response.statusCode).toBe(201);
         });
     });
-    test('returns random "order number" for POST', () => {
-      return request(app)
-        .post("/order")
-        .then((response) => {
-          const orderNumber = response.body.orderNumber;
-          expect(orderNumber).toBeLessThan(10000000000);
-          expect(orderNumber).toBeGreaterThan(0);
-        });
-    });
   });
 });

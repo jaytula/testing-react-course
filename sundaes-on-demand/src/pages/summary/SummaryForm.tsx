@@ -3,7 +3,7 @@ import { Button, Form, OverlayTrigger, Popover } from "react-bootstrap";
 import { useOrderDetails } from "../../contexts/OrderDetails";
 
 const SummaryForm: React.FC<{ nextPhase?: () => void }> = ({ nextPhase }) => {
-  const { resetOrder, setOrderNumber } = useOrderDetails();
+  const { resetOrder } = useOrderDetails();
   const [checked, setChecked] = useState<boolean>(false);
 
   const popover = (
@@ -29,13 +29,7 @@ const SummaryForm: React.FC<{ nextPhase?: () => void }> = ({ nextPhase }) => {
     event.preventDefault();
     resetOrder();
 
-    const response = await fetch("http://localhost:3030/order", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-    });
-
-    const data = await response.json();
-    setOrderNumber(data.orderNumber);
+ 
 
     if (nextPhase) nextPhase();
   };

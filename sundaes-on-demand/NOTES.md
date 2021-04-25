@@ -594,3 +594,17 @@ in your application
   - minimum component to test
 - Show alert for error when submitting order
   - error response from server
+
+## Lesson 76. Confirm "Loading" Text
+
+- Confirmation page is set to show "Loading" while order number is loading from server
+- Update "happy path" test
+  - Test "Loading" appears and then disappears
+- Could use `waitForElementToBeRemoved` like we did with Terms & Conditions popover
+  - not necessary because we can `await` what should appear after "Loading" is gone
+  - not possible for popover, since nothing appeared when it disappeared
+- In this case, can simply use query that expects "loading" not to be there
+  - use cheat sheet for reference
+  - https://testing-library.com/docs/react-testing-library/cheatsheet
+- This is not TDD since code is already written
+  - didn't want to add this to final exam, so much going on already!

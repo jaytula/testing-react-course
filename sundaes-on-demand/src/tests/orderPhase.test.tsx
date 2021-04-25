@@ -66,7 +66,10 @@ test("order phases for happy path", async () => {
   userEvent.click(confirmOrderButton);
 
   // confirm order number on confirmation page
+  screen.getByText('Loading');
   await screen.findByRole("heading", { name: /thank you/i });
+  const notLoading = await screen.queryByText('Loading');
+  expect(notLoading).not.toBeInTheDocument();
 
   const orderNumberText = screen.getByText(/order number/i);
   expect(orderNumberText).toHaveTextContent("587");
