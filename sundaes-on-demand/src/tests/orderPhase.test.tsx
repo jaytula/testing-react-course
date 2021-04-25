@@ -17,17 +17,17 @@ test("order phases for happy path", async () => {
 
   // add ice cream scoops and toppings
   const vanillaInput = await screen.findByRole("spinbutton", {
-    name: 'Vanilla',
+    name: "Vanilla",
   });
   userEvent.clear(vanillaInput);
   userEvent.type(vanillaInput, "1");
 
-  const chocolateInput = screen.getByRole('spinbutton', {name: 'Chocolate'});
+  const chocolateInput = screen.getByRole("spinbutton", { name: "Chocolate" });
   userEvent.clear(chocolateInput);
-  userEvent.type(chocolateInput, '2');
+  userEvent.type(chocolateInput, "2");
 
   const cherriesCheckbox = await screen.findByRole("checkbox", {
-    name: 'Cherries',
+    name: "Cherries",
   });
   userEvent.click(cherriesCheckbox);
 
@@ -44,7 +44,7 @@ test("order phases for happy path", async () => {
 
   // check summary information based on order
   screen.getByRole("heading", {
-    name: 'Order Summary',
+    name: "Order Summary",
   });
 
   expect(await findTextScoopsTotal()).toHaveTextContent("6.00");
@@ -52,9 +52,9 @@ test("order phases for happy path", async () => {
   expect(await findTextGrandTotal()).toHaveTextContent("7.50");
 
   // check summary option items
-  screen.getByText('1 Vanilla');
-  screen.getByText('2 Chocolate');
-  screen.getByText('Cherries');
+  screen.getByText("1 Vanilla");
+  screen.getByText("2 Chocolate");
+  screen.getByText("Cherries");
 
   // accept terms and conditions and click button to confirm order
   const tcCheckbox = screen.getByRole("checkbox", { name: /i agree to/i });
@@ -66,9 +66,9 @@ test("order phases for happy path", async () => {
   userEvent.click(confirmOrderButton);
 
   // confirm order number on confirmation page
-  screen.getByText('Loading');
+  screen.getByText("Loading");
   await screen.findByRole("heading", { name: /thank you/i });
-  const notLoading = await screen.queryByText('Loading');
+  const notLoading = await screen.queryByText("Loading");
   expect(notLoading).not.toBeInTheDocument();
 
   const orderNumberText = screen.getByText(/order number/i);
@@ -85,5 +85,30 @@ test("order phases for happy path", async () => {
   expect(await findTextScoopsTotal()).toHaveTextContent("0.00");
   expect(await findTextToppingsTotal()).toHaveTextContent("0.00");
 
-  // do we need to await anything to avoid test errors?
+  // do we need to await anything to avoid test errors?p
+});
+
+test.only("that toppings is conditionally displayed in review phase", async () => {
+  render(<App />);
+
+  const vanillaInput = await screen.findByRole("spinbutton", {
+    name: "Vanilla",
+  });
+  userEvent.clear(vanillaInput);
+  userEvent.type(vanillaInput, "1");
+
+  // find and click order button
+  const orderButton = screen.getByRole("button", {
+    name: /order sundae/i,
+  });
+
+  userEvent.click(orderButton);
+
+  // check summary information based on order
+  screen.getByRole("heading", {
+    name: "Order Summary",
+  });
+
+  const notToppingsTotal = await screen.queryByRole('heading', {name: /toppings total/i});
+  expect(notToppingsTotal).not.toBeInTheDocument();
 });
