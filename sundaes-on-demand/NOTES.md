@@ -626,3 +626,16 @@ in your application
   - Anything else? No hard-and-fast right answers here!
 6. How to test?  Which query to assert something's **not** on the page!
 7. Do we need to async / await? Is there anything async going on?
+
+## Lesson 78. Disable Order Button for No Scoops
+
+1. What to render? `OrderEntry`
+2. Pass props? `nextPhase` can be `jest.fn()`
+3. Wrap render? Yes, this will render a component that calls `useOrderDetails`
+4. Which file for tests? `OrderEntry.test.tsx`
+5. What to test?
+  - *Order Sundae* button is initially disabled
+  - If there is scoop, it should be enabled
+  - Remove scoop and it should be disabled
+6. How to test?
+7. Do we need to async / await?
