@@ -638,4 +638,22 @@ in your application
   - If there is scoop, it should be enabled
   - Remove scoop and it should be disabled
 6. How to test?
-7. Do we need to async / await?
+7. Do we need to async / await? 
+
+## Lesson 79. Red Input Box for Invalid Scoop Count
+
+### Validate Scoop Count Value
+
+- How to test tghat the box tgurned red?
+  - Go to https://react-boostrap.netlify.app/components/forms/#forms-validation-native
+  - Submit their example form with invalid (no) input                                             
+- Use `.toHaveClass` assertion
+
+
+1. What to render? `Scoop Option`
+2. Pass props? `SetItemCount` needs jest mock function value `jest.fn()`
+3. Wrap render? does `useOrderDetails` get called in component?
+4. Which files for tests? `ScoopOption.test.jsx` (unit test for ScoopOption)
+5. What to test? "box turns red" (i.e. `is-invalid` class)
+6. How to test? covedred in last slide
+7. Do we need to asyhnc / await? Is there anyhthing async going on?
