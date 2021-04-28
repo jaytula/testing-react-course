@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Form, Row } from "react-bootstrap";
 import Col from "react-bootstrap/Col";
 
@@ -8,7 +9,9 @@ interface Props {
 }
 
 const ScoopOption: React.FC<Props> = ({ name, imagePath, updateItemCount }) => {
+  const [value, setValue] = useState<string>("0");
   const handleChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
+    setValue(event.target.value)
     updateItemCount(name, event.target.value);
   };
 
@@ -30,7 +33,9 @@ const ScoopOption: React.FC<Props> = ({ name, imagePath, updateItemCount }) => {
         <Col xs="5" style={{ textAlign: "left" }}>
           <Form.Control
             type="number"
+            isInvalid={Number(value) < 0}
             defaultValue={0}
+            value={value}
             onChange={handleChange}
           />
         </Col>
