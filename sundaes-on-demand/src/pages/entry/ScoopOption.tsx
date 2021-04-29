@@ -11,9 +11,11 @@ interface Props {
 const ScoopOption: React.FC<Props> = ({ name, imagePath, updateItemCount }) => {
   const [value, setValue] = useState<string>("0");
   const handleChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
-    setValue(event.target.value)
+    setValue(event.target.value);
     updateItemCount(name, event.target.value);
   };
+
+  const currentValue = parseFloat(value);
 
   return (
     <Col xs={12} sm={6} md={4} lg={3} style={{ textAlign: "center" }}>
@@ -33,8 +35,11 @@ const ScoopOption: React.FC<Props> = ({ name, imagePath, updateItemCount }) => {
         <Col xs="5" style={{ textAlign: "left" }}>
           <Form.Control
             type="number"
-            isInvalid={Number(value) < 0}
-            defaultValue={0}
+            isInvalid={
+              currentValue < 0 ||
+              currentValue > 10 ||
+              Math.floor(currentValue) !== currentValue
+            }
             value={value}
             onChange={handleChange}
           />
