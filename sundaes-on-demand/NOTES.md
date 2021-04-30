@@ -667,3 +667,19 @@ in your application
 5. What to test? Upon setting a scoop option to invalid number, the subtotal does not change.
 6. How to test? Check that subtotal does not change.
 7. Do we need to async / await? Not sure
+
+## Lesson 81. Server Error on Order Confirmation Page
+
+Show red error box message:
+
+```
+An unexpected error occurred. Please try again later.
+```
+
+1. What to render? `OrderConfirmation`
+2. Pass props? `nextPhase` mock
+3. Wrap render? no
+4. Which files for tests?  `tests/OrderConfirmation.test.tsx`
+5. What to test? That a message is present. `getByText`
+6. How to test? Force an error
+7. Do we need to async / await? Yes
