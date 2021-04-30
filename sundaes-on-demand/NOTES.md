@@ -678,8 +678,8 @@ An unexpected error occurred. Please try again later.
 
 1. What to render? `OrderConfirmation`
 2. Pass props? `nextPhase` mock
-3. Wrap render? no
+3. Wrap render? no.... does not `useOrderDetails`
 4. Which files for tests?  `tests/OrderConfirmation.test.tsx`
 5. What to test? That a message is present. `getByText`
-6. How to test? Force an error
+6. How to test? Override order POST handler for this test
 7. Do we need to async / await? Yes
