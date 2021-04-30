@@ -1,7 +1,14 @@
 import { OrderDetailsProvider } from "../../../contexts/OrderDetails";
 import { render, screen } from "../../../test-utils/testing-library-utils";
+import userEvent from '@testing-library/user-event';
 
 import Options from "../Options";
+
+const getScoopsTotal = async () => screen.findByText(/scoops total/i);
+const getScoopsTotalHtml = async () => {
+  const element = await getScoopsTotal();
+  return element.innerHTML;
+}
 
 describe("Options test", () => {
   test("displays image for each scoop option from server", async () => {
@@ -36,4 +43,37 @@ describe("Options test", () => {
       "Hot fudge topping",
     ]);
   });
+
+  test.only('scoop subtotal does not update when input invalid', async () => {
+    render(<Options optionType="scoops" />)
+    
+    const initialScoopsTotal = await getScoopsTotalHtml();
+
+    expect(initialScoopsTotal).toMatch('$0.00');
+
+    const vanillaInput = await screen.findByRole('spinbutton', {name: /vanilla/i})
+    userEvent.clear(vanillaInput);
+    userEvent.type(vanillaInput, "2");
+    const twoScoopsTotal = await getScoopsTotalHtml();
+    expect(initialScoopsTotal).not.toBe(twoScoopsTotal);
+    expect(twoScoopsTotal).toMatch('$4.00');
+
+    userEvent.clear(vanillaInput);
+    userEvent.type(vanillaInput, "11");
+    const elevenScoopsTotal = await getScoopsTotalHtml();
+    expect(twoScoopsTotal).not.toBe(elevenScoopsTotal); 
+    expect(twoScoopsTotal).toMatch('$4.00');
+
+    userEvent.clear(vanillaInput);
+    userEvent.type(vanillaInput, "8");
+    const eightScoopsTotal = await getScoopsTotalHtml();
+    expect(eightScoopsTotal).not.toBe(elevenScoopsTotal)
+    expect(eightScoopsTotal).toMatch('$16.00');
+
+    userEvent.clear(vanillaInput);
+    userEvent.type(vanillaInput, "-1");
+    const minusOneTotal = await getScoopsTotalHtml();
+    expect(minusOneTotal).toBe(eightScoopsTotal);
+    expect(minusOneTotal).toMatch('$16.00');
+  })
 });
