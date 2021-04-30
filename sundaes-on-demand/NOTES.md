@@ -655,5 +655,15 @@ in your application
 3. Wrap render? does `useOrderDetails` get called in component?
 4. Which files for tests? `ScoopOption.test.jsx` (unit test for ScoopOption)
 5. What to test? "box turns red" (i.e. `is-invalid` class)
-6. How to test? covedred in last slide
+6. How to test? covered in last slide
 7. Do we need to asyhnc / await? Is there anyhthing async going on?
+
+## Lesson 80. No Scoops Subtotal Update for Invalid Scoop Count
+
+1. What to render? `Options`
+2. Pass props? `optionType` set to *scoop*
+3. Wrap render? yes. `useOrderDetails` gets called
+4. Which files for tests? `Options.test.tsx`
+5. What to test? Upon setting a scoop option to invalid number, the subtotal does not change.
+6. How to test? Check that subtotal does not change.
+7. Do we need to async / await? Not sure
